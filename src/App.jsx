@@ -9,10 +9,9 @@ function App() {
   return (
     <Routes>
       <Route element={<NavLayout />}>
-        <Route path="/" element={<Navigate to="/home" replace />} />
-        <Route path="/home" element={<Landing />} />
-        <Route path="/about" element={<div>About Page</div>} />
-        <Route path="/contact" element={<div>Contact Page</div>} />
+        <Route path="/" element={<Navigate to="/landing" replace />} />
+        <Route path="/landing" element={<Landing />} />
+
         <Route path="*" element={<div>404 Not Found</div>} />
       </Route>
     </Routes>

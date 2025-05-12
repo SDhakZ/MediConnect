@@ -49,6 +49,7 @@
 }
 html,
 body {
+  scroll-behavior: smooth;
   font-family: "Poppins";
   background-color: #fff;
   font-family: "Poppins", sans-serif;

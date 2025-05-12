@@ -78,7 +78,7 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="/landing"
+                href="#why-nepal"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/why-nepal"
                     ? "text-blue-700 font-semibold"
@@ -90,7 +90,7 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="/landing"
+                href="#why-mediconnect"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/why-mediconnect"
                     ? "text-blue-700 font-semibold"
@@ -102,19 +102,7 @@ function Navbar() {
             </li>{" "}
             <li>
               <a
-                href="/landing"
-                className={`block px-3 py-2 rounded-sm md:p-0 ${
-                  location.pathname === "/about-us"
-                    ? "text-blue-700 font-semibold"
-                    : "text-gray-800 hover:text-blue-700"
-                }`}
-              >
-                About Us
-              </a>
-            </li>
-            <li>
-              <a
-                href="/landing"
+                href="#commitment"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/our-commitment"
                     ? "text-blue-700 font-semibold"
@@ -126,7 +114,7 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="/landing"
+                href="#contact"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/contact"
                     ? "text-blue-700 font-semibold"

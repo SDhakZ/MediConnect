@@ -139,12 +139,12 @@ export default function WhyMediConnect() {
         </div>
       </div>
 
-      <section className="flex flex-col gap-5 items-center justify-center py-12 bg-[#F4F1E0]">
+      <section className="flex flex-col gap-5 items-center justify-center py-12 bg-[#f1f0eb]">
         <div className="flex flex-col items-center justify-center gap-5 container-margin">
           <h2 className="text-xl font-semibold text-primary-black">
             About MediConnect
           </h2>
-          <p className="text-xl font-medium leading-snug text-center text-secondary-black">
+          <p className="text-lg max-w-[800px] font-medium leading-snug text-center text-secondary-black">
             MediConnect Pokhara is a private-sector organization uniting
             hospitals, hotels, wellness centers, and adventure agencies to
             create Nepal’s first integrated medical tourism ecosystem. Backed by

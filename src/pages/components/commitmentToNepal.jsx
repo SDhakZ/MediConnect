@@ -94,9 +94,12 @@ export default function CommitmentToNepal() {
               Share your needs — we’ll match you with the right treatment, plan,
               and travel support.
             </p>
-            <button className="mt-auto text-[#13618B] font-medium py-4 border-2 border-[#13618B] rounded-full w-full max-w-[170px] flex items-center justify-center">
+            <a
+              href="#contact"
+              className="mt-auto text-[#13618B] font-medium py-4 border-2 border-[#13618B] rounded-full w-full max-w-[170px] flex items-center justify-center"
+            >
               Contact Us
-            </button>
+            </a>
             <motion.img
               ref={starRef}
               style={{ rotate }}
