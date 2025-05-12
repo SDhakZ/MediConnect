@@ -74,10 +74,10 @@ export default function WhyNepal() {
   ];
 
   return (
-    <section ref={sectionRef} className="py-24 container-margin">
-      <div className="flex justify-start gap-16">
+    <section ref={sectionRef} className="pb-24 pt-36 container-margin">
+      <div className="flex justify-between gap-16">
         {/* Left Image */}
-        <div className="relative mt-[146px]">
+        <div className="relative ">
           <img
             src="/doctor-patient.webp"
             className="max-w-[650px]"
@@ -96,7 +96,7 @@ export default function WhyNepal() {
           <h2 className="text-4xl leading-tight text-primary-black max-w-[423px] font-semibold">
             Why Choose Nepal for Your Medical Journey?
           </h2>
-          <ul className="space-y-10 mt-14 max-w-[400px] text-gray-700">
+          <ul className="space-y-10 mt-14 max-w-[450px] text-gray-700">
             {whyNepal.slice(0, 4).map((data, idx) => (
               <AnimatedPoint
                 key={idx}
@@ -110,7 +110,7 @@ export default function WhyNepal() {
       </div>
 
       {/* Bottom row */}
-      <div className="flex items-center justify-between gap-10 mt-28">
+      <div className="flex justify-between gap-10 mt-24">
         <div className="space-y-6">
           <ul className="space-y-10 max-w-[450px] text-gray-700">
             {whyNepal.slice(4, 6).map((data, idx) => (
@@ -126,7 +126,7 @@ export default function WhyNepal() {
 
         {/* Circle image collage */}
         <div className="relative flex items-center justify-center">
-          <div className="overflow-hidden max-w-[600px]">
+          <div className="overflow-hidden max-w-[450px]">
             <img
               src="/stupa-mountain.webp"
               alt="Nepal Temple"
