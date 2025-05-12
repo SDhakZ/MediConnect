@@ -66,7 +66,7 @@ export default function CommitmentToNepal() {
         <div className="flex items-center gap-20">
           <div className="w-full max-w-[790px]">
             <img
-              src="/lake-mountain.png"
+              src="/lake-mountain.webp"
               alt="Lake & Mountain"
               className="w-full"
             />

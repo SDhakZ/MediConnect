@@ -75,12 +75,12 @@ export default function WhyNepal() {
 
   return (
     <section ref={sectionRef} className="py-24 container-margin">
-      <div className="flex justify-between gap-16">
+      <div className="flex justify-start gap-16">
         {/* Left Image */}
         <div className="relative mt-[146px]">
           <img
-            src="/doctor-patient.png"
-            className="max-w-[600px]"
+            src="/doctor-patient.webp"
+            className="max-w-[650px]"
             alt="Doctor and Patient"
           />
           <motion.img
@@ -105,7 +105,7 @@ export default function WhyNepal() {
                 delay={idx * 0.2} // adds a staggered delay
               />
             ))}
-          </ul>
+          </ul>{" "}
         </div>
       </div>
 
@@ -128,7 +128,7 @@ export default function WhyNepal() {
         <div className="relative flex items-center justify-center">
           <div className="overflow-hidden max-w-[600px]">
             <img
-              src="/stupa-mountain.png"
+              src="/stupa-mountain.webp"
               alt="Nepal Temple"
               className="w-full h-full "
             />

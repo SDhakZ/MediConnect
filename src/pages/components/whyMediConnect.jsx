@@ -124,7 +124,7 @@ export default function WhyMediConnect() {
         {/* Image + rotating star */}
         <div className="relative flex items-center mt-40">
           <img
-            src="/globe.png"
+            src="/globe.webp"
             alt="Globe with stethoscope"
             className="w-full  max-w-[500px]"
           />
@@ -157,7 +157,7 @@ export default function WhyMediConnect() {
       <section className="flex flex-col items-center gap-20 px-4 py-24 mx-auto md:flex md:flex-row container-margin">
         {/* Hex Grid */}
         <div className="max-w-[600px]">
-          <img className="w-full" src="/hexagon.png" />
+          <img className="w-full" src="/hexagon.webp" />
         </div>
         {/* Text Column */}
         <div className="max-w-[400px] space-y-10">
