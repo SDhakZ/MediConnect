@@ -102,13 +102,28 @@ export default function WhyMediConnect() {
         background: "linear-gradient(to bottom, #EBF8FF 0%, white 100%)",
       }}
     >
-      <div className="flex justify-between items-center mb-[112px] gap-12 mx-auto justify-items-center container-margin md:grid-cols-2">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-16 md:mb-[112px] gap-12 mx-auto justify-items-center container-margin md:grid-cols-2">
         {/* Text Points */}
         <div>
-          <h2 className="mb-20 text-[48px] font-semibold leading-tight text-primary-black">
+          <h2 className="mb-10 md:mb-20 text-3xl md:text-[48px] font-semibold leading-tight text-primary-black">
             Why <br />
             MediConnect?
           </h2>
+          <div className="relative flex items-center mt-2 mb-10 md:hidden">
+            <img
+              src="/globe.webp"
+              alt="Globe with stethoscope"
+              className="w-full  max-w-[500px]"
+            />
+
+            <motion.img
+              ref={starRef}
+              style={{ rotate }}
+              src="/star.png"
+              alt="Spinning Star"
+              className="absolute max-w-[60px] top-[-24px] right-[-20px]"
+            />
+          </div>
           <ul className="space-y-10">
             {whyMediconnect.map((point, idx) => (
               <AnimatedPoint
@@ -122,7 +137,7 @@ export default function WhyMediConnect() {
         </div>
 
         {/* Image + rotating star */}
-        <div className="relative flex items-center mt-40">
+        <div className="relative items-center hidden mt-40 md:flex">
           <img
             src="/globe.webp"
             alt="Globe with stethoscope"
@@ -154,7 +169,7 @@ export default function WhyMediConnect() {
         </div>
       </section>
 
-      <section className="flex flex-col items-center gap-20 px-4 py-24 mx-auto md:flex md:flex-row container-margin">
+      <section className="flex flex-col items-center gap-20 pt-16 mx-auto md:py-24 md:flex md:flex-row container-margin">
         {/* Hex Grid */}
         <div className="max-w-[600px]">
           <img className="w-full" src="/hexagon.webp" />

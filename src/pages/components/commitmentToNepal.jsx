@@ -58,13 +58,13 @@ export default function CommitmentToNepal() {
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 90]);
   return (
     <section
-      className=" py-24 bg-gradient-to-b w-full flex justify-center from-[#EBF8FF] to-white"
+      className="py-16 md:py-24 bg-gradient-to-b w-full flex justify-center from-[#EBF8FF] to-white"
       id="commitment"
     >
       <div className="max-w-screen-2xl">
         {/* Left image + text */}
-        <div className="flex items-center gap-20">
-          <div className="w-full max-w-[790px]">
+        <div className="flex flex-col items-center gap-20 md:flex-row">
+          <div className="hidden md:block w-full max-w-[400px] md:max-w-[790px]">
             <img
               src="/lake-mountain.webp"
               alt="Lake & Mountain"
@@ -72,11 +72,18 @@ export default function CommitmentToNepal() {
             />
           </div>
 
-          <div className="flex flex-col gap-2">
-            <h2 className="mb-3 text-[48px] leading-tight max-w-[480px] font-semibold text-primary-black">
+          <div className="flex flex-col items-center gap-2 px-10 md:px-0">
+            <h2 className="mb-3 text-3xl text-center md:text-left md:text-[48px] leading-tight  md:max-w-[480px] font-semibold text-primary-black">
               Beyond Healthcare: Our Commitment to Nepal
             </h2>
-            <p className="max-w-lg mt-2 text-xl leading-relaxed text-secondary-black">
+            <div className="mt-6 md:hidden w-full  md:max-w-[790px]">
+              <img
+                src="/lake-mountain.webp"
+                alt="Lake & Mountain"
+                className="w-full"
+              />
+            </div>
+            <p className="mt-6 text-xl leading-relaxed text-center md:text-left md:mt-2 md:max-w-lg text-secondary-black">
               We promote green practices through eco-friendly recovery lodges,
               low-impact travel plans, and support for herbal agriculture.
             </p>
@@ -84,7 +91,8 @@ export default function CommitmentToNepal() {
         </div>
 
         {/*  Cards */}
-        <div className="grid md:grid-cols-[1fr_1fr] mt-24 lg:grid-cols-[1fr_2fr] gap-6 container-margin">
+
+        <div className="grid px-10 md:grid-cols-[1fr_1fr] mt-16 md:mt-24 lg:grid-cols-[1fr_2fr] gap-6 ">
           {/* Blue Feature Card */}
           <div className="bg-[#dbeafe] shadow-md flex flex-col overflow-hidden px-6 py-8 rounded-xl relative h-full">
             <h4 className="mb-2 text-3xl font-semibold text-primary-black">

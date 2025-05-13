@@ -40,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mb-6 text-[64px] leading-tight font-semibold"
+          className="mb-6 text-3xl md:text-[64px] leading-tight font-semibold"
         >
           Your Healing Journey <br /> Starts in Nepal
         </motion.h1>
@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2 }}
-          className="max-w-xl mx-auto mb-8 text-[#F5F5F5] text-[26px] sm:text-xl"
+          className="max-w-sm md:max-w-xl mx-auto mb-8 text-[#F5F5F5] text-lg md:text-[26px] sm:text-xl"
         >
           Discover affordable, world-class treatment in Nepal —
           <br className="hidden sm:block" /> where healing meets serenity.

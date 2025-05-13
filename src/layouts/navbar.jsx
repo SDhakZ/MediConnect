@@ -26,7 +26,7 @@ function Navbar() {
     <nav
       className={`${
         hasShadow ? "shadow-md" : ""
-      } z-[999] sticky top-0 bg-white w-full border-gray-200 `}
+      } z-[999] px-3 sticky top-0 bg-white w-full border-gray-200 `}
     >
       <div
         className={`flex flex-wrap items-center justify-between max-w-screen-2xl ${
@@ -69,8 +69,8 @@ function Navbar() {
                 href="/landing"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/landing"
-                    ? "text-blue-700 font-semibold"
-                    : "text-gray-800 hover:text-blue-700"
+                    ? "text-[#13618B] font-semibold"
+                    : "text-gray-800 hover:text-[#13618B]"
                 }`}
               >
                 Landing

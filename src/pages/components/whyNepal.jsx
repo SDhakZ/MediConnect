@@ -22,7 +22,7 @@ const AnimatedPoint = ({ title, description, delay = 0 }) => {
       ref={ref}
       initial={{ opacity: 0, y: 20 }}
       animate={controls}
-      className="flex flex-col gap-4"
+      className="flex flex-col gap-2 md:gap-4"
     >
       <h4 className="text-xl font-semibold text-primary-black">{title}</h4>
       <p className="text-sm leading-relaxed text-secondary-black">
@@ -74,18 +74,23 @@ export default function WhyNepal() {
   ];
 
   return (
-    <section ref={sectionRef} className="pb-24 pt-36 container-margin">
-      <div className="flex justify-between gap-16">
+    <section
+      ref={sectionRef}
+      className="pt-20 pb-16 md:pb-24 md:pt-36 container-margin"
+    >
+      <div className="flex flex-col items-center justify-between gap-16 md:items-start md:flex-row">
         {/* Left Image */}
-        <div className="relative ">
-          <img
-            src="/doctor-patient.webp"
-            className="max-w-[650px]"
-            alt="Doctor and Patient"
-          />
+        <div className="relative">
+          <div className="w-full max-w-[400px] md:max-w-[650px]">
+            <img
+              src="/doctor-patient.webp"
+              className="w-full"
+              alt="Doctor and Patient"
+            />
+          </div>
           <motion.img
             style={{ rotate }}
-            className="absolute -right-[71px] -bottom-16 "
+            className="absolute max-w-[80px] md:max-w-none -right-[38px] -bottom-[40px] md:-right-[71px] md:-bottom-16 "
             src="/Rectangle.png"
             alt="Rotating Accent"
           />
@@ -93,10 +98,10 @@ export default function WhyNepal() {
 
         {/* Right Text Content */}
         <div>
-          <h2 className="text-4xl leading-tight text-primary-black max-w-[423px] font-semibold">
+          <h2 className="text-2xl md:text-4xl leading-tight text-primary-black max-w-[423px] font-semibold">
             Why Choose Nepal for Your Medical Journey?
           </h2>
-          <ul className="space-y-10 mt-14 max-w-[450px] text-gray-700">
+          <ul className="space-y-9 md:space-y-10 mt-8 md:mt-14 max-w-[450px] text-gray-700">
             {whyNepal.slice(0, 4).map((data, idx) => (
               <AnimatedPoint
                 key={idx}
@@ -110,9 +115,9 @@ export default function WhyNepal() {
       </div>
 
       {/* Bottom row */}
-      <div className="flex justify-between gap-10 mt-24">
+      <div className="flex flex-col-reverse items-center justify-between gap-10 mt-12 md:mt-20 md:flex-row">
         <div className="space-y-6">
-          <ul className="space-y-10 max-w-[450px] text-gray-700">
+          <ul className="space-y-9 md:space-y-10 max-w-[450px] text-gray-700">
             {whyNepal.slice(4, 6).map((data, idx) => (
               <AnimatedPoint
                 key={idx}
