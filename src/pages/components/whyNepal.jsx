@@ -131,7 +131,7 @@ export default function WhyNepal() {
 
         {/* Circle image collage */}
         <div className="relative flex items-center justify-center">
-          <div className="overflow-hidden max-w-[450px]">
+          <div className="overflow-hidden max-w-[550px]">
             <img
               src="/stupa-mountain.webp"
               alt="Nepal Temple"

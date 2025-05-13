@@ -72,7 +72,7 @@ export default function CommitmentToNepal() {
             />
           </div>
 
-          <div className="flex flex-col items-center gap-2 px-10 md:px-0">
+          <div className="flex flex-col items-center gap-2 px-10 md:items-start md:px-0">
             <h2 className="mb-3 text-3xl text-center md:text-left md:text-[48px] leading-tight  md:max-w-[480px] font-semibold text-primary-black">
               Beyond Healthcare: Our Commitment to Nepal
             </h2>
