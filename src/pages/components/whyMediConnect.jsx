@@ -168,24 +168,28 @@ export default function WhyMediConnect() {
           </p>
         </div>
       </section>
-
-      <section className="flex flex-col items-center gap-20 pt-16 mx-auto md:py-24 md:flex md:flex-row container-margin">
-        {/* Hex Grid */}
-        <div className="max-w-[600px]">
-          <img className="w-full" src="/hexagon.webp" />
-        </div>
-        {/* Text Column */}
-        <div className="max-w-[400px] space-y-10">
-          <ul className="flex flex-col gap-10">
-            {services.map((item, idx) => (
-              <AnimatedPoint
-                key={idx}
-                title={item.title}
-                description={item.description}
-                delay={idx * 0.2}
-              />
-            ))}
-          </ul>
+      <section className="pt-16 md:py-24">
+        <h2 className="px-10 mb-20 text-4xl font-semibold text-center text-primary-black">
+          Program Sectors
+        </h2>
+        <div className="flex flex-col items-center gap-20 mx-auto md:flex md:flex-row container-margin">
+          {/* Hex Grid */}
+          <div className="max-w-[600px]">
+            <img className="w-full" src="/hexagon.webp" />
+          </div>
+          {/* Text Column */}
+          <div className="max-w-[400px] space-y-10">
+            <ul className="flex flex-col gap-10">
+              {services.map((item, idx) => (
+                <AnimatedPoint
+                  key={idx}
+                  title={item.title}
+                  description={item.description}
+                  delay={idx * 0.2}
+                />
+              ))}
+            </ul>
+          </div>
         </div>
       </section>
     </section>

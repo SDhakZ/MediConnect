@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useScroll, useTransform, motion, useAnimation } from "framer-motion";
 import { useRef } from "react";
+import { treatments } from "../../data/treatment";
 
 import { useInView } from "react-intersection-observer";
 const AnimatedPoint = ({ title, description, delay = 0 }) => {
@@ -74,72 +75,110 @@ export default function WhyNepal() {
   ];
 
   return (
-    <section
-      ref={sectionRef}
-      className="pt-20 pb-16 md:pb-24 md:pt-36 container-margin"
-    >
-      <div className="flex flex-col items-center justify-between gap-16 md:items-start md:flex-row">
-        {/* Left Image */}
-        <div className="relative">
-          <div className="w-full max-w-[400px] md:max-w-[650px]">
-            <img
-              src="/doctor-patient.webp"
-              className="w-full"
-              alt="Doctor and Patient"
+    <div className="pt-20 pb-16 md:pb-24 md:pt-36">
+      <section ref={sectionRef} className="mb-16 md:mb-24 container-margin">
+        <div className="flex flex-col items-center justify-between gap-16 md:items-start md:flex-row">
+          {/* Left Image */}
+          <div className="relative">
+            <div className="w-full max-w-[400px] md:max-w-[650px]">
+              <img
+                src="/doctor-patient.webp"
+                className="w-full"
+                alt="Doctor and Patient"
+              />
+            </div>
+            <motion.img
+              style={{ rotate }}
+              className="absolute max-w-[80px] md:max-w-none -right-[38px] -bottom-[40px] md:-right-[71px] md:-bottom-16 "
+              src="/Rectangle.png"
+              alt="Rotating Accent"
             />
           </div>
-          <motion.img
-            style={{ rotate }}
-            className="absolute max-w-[80px] md:max-w-none -right-[38px] -bottom-[40px] md:-right-[71px] md:-bottom-16 "
-            src="/Rectangle.png"
-            alt="Rotating Accent"
-          />
-        </div>
 
-        {/* Right Text Content */}
-        <div>
-          <h2 className="text-2xl md:text-4xl leading-tight text-primary-black max-w-[423px] font-semibold">
-            Why Choose Nepal for Your Medical Journey?
-          </h2>
-          <ul className="space-y-9 md:space-y-10 mt-8 md:mt-14 max-w-[450px] text-gray-700">
-            {whyNepal.slice(0, 4).map((data, idx) => (
-              <AnimatedPoint
-                key={idx}
-                title={data.title}
-                description={data.description}
-                delay={idx * 0.2} // adds a staggered delay
-              />
-            ))}
-          </ul>{" "}
-        </div>
-      </div>
-
-      {/* Bottom row */}
-      <div className="flex flex-col-reverse items-center justify-between gap-10 mt-12 md:mt-20 md:flex-row">
-        <div className="space-y-6">
-          <ul className="space-y-9 md:space-y-10 max-w-[450px] text-gray-700">
-            {whyNepal.slice(4, 6).map((data, idx) => (
-              <AnimatedPoint
-                key={idx}
-                title={data.title}
-                description={data.description}
-                delay={idx * 0.2} // adds a staggered delay
-              />
-            ))}
-          </ul>
-        </div>
-
-        {/* Circle image collage */}
-        <div className="relative flex items-center justify-center">
-          <div className="overflow-hidden max-w-[550px]">
-            <img
-              src="/stupa-mountain.webp"
-              alt="Nepal Temple"
-              className="w-full h-full "
-            />
+          {/* Right Text Content */}
+          <div>
+            <h2 className="text-2xl md:text-4xl leading-tight text-primary-black max-w-[423px] font-semibold">
+              Why Choose Nepal for Your Medical Journey?
+            </h2>
+            <ul className="space-y-9 md:space-y-10 mt-8 md:mt-14 max-w-[450px] text-gray-700">
+              {whyNepal.slice(0, 4).map((data, idx) => (
+                <AnimatedPoint
+                  key={idx}
+                  title={data.title}
+                  description={data.description}
+                  delay={idx * 0.2}
+                />
+              ))}
+            </ul>
           </div>
         </div>
-      </div>
-    </section>
+
+        {/* Bottom row */}
+        <div className="flex flex-col-reverse items-center justify-between gap-10 mt-12 md:mt-20 md:flex-row">
+          <div className="space-y-6">
+            <ul className="space-y-9 md:space-y-10 max-w-[450px] text-gray-700">
+              {whyNepal.slice(4, 6).map((data, idx) => (
+                <AnimatedPoint
+                  key={idx}
+                  title={data.title}
+                  description={data.description}
+                  delay={idx * 0.2}
+                />
+              ))}
+            </ul>
+          </div>
+
+          {/* Circle image collage */}
+          <div className="relative flex items-center justify-center">
+            <div className="overflow-hidden max-w-[550px]">
+              <img
+                src="/stupa-mountain.webp"
+                alt="Nepal Temple"
+                className="w-full h-full "
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="px-4 container-margin">
+        <h2 className="mb-16 text-3xl font-semibold text-center md:text-4xl text-primary-black">
+          Medical Services in Nepal
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {treatments.map((item, index) => (
+            <div
+              key={index}
+              className="relative flex flex-col gap-4 bg-[#f9f7f2] px-8 py-6 rounded-xl shadow-sm"
+            >
+              {/* Popular Badge */}
+              {item.highlight && (
+                <div className="absolute right-0 px-3 py-1 text-xs font-medium text-white bg-yellow-400 rounded-md shadow-sm -top-3">
+                  Popular Choice
+                </div>
+              )}
+
+              {/* Icon & Title */}
+              <div className="flex items-center gap-4">
+                <img
+                  src={item.icon}
+                  alt={`${item.title} Icon`}
+                  className="w-12 h-12 p-1 border-2 rounded-md"
+                />
+                <h4 className="text-lg font-semibold text-primary-black">
+                  {item.title}
+                </h4>
+              </div>
+
+              {/* Bullets */}
+              <ul className="pl-0 space-y-3 text-base list-disc list-outside text-secondary-black">
+                <li>{item.bullet1}</li>
+                <li>{item.bullet2}</li>
+              </ul>
+            </div>
+          ))}
+        </div>
+      </section>
+    </div>
   );
 }
