@@ -163,7 +163,7 @@ export default function WhyNepal() {
                 <img
                   src={item.icon}
                   alt={`${item.title} Icon`}
-                  className="w-12 h-12 p-1 border-2 rounded-md"
+                  className="w-12 h-12 p-1 border-2 border-[#CECBBE] rounded-md"
                 />
                 <h4 className="text-lg font-semibold text-primary-black">
                   {item.title}
