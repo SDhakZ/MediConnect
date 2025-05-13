@@ -49,7 +49,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2 }}
-          className="max-w-sm md:max-w-xl mx-auto mb-8 text-[#F5F5F5] text-lg md:text-[26px] sm:text-xl"
+          className="max-w-sm font-thin md:max-w-3xl md:leading-normal mx-auto mb-8 text-[#F5F5F5] text-lg md:text-[26px]  sm:text-xl"
         >
           Discover affordable, world-class treatment in Nepal —
           <br className="hidden sm:block" /> where healing meets serenity.
@@ -59,7 +59,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.3, delay: 0.4 }}
-          className="px-7 py-4 font-semibold text-white transition-all bg-[#AEA800] rounded-full shadow-lg hover:bg-yellow-500"
+          className="px-7 py-4 font-medium text-white transition-all bg-[#AEA800] rounded-full shadow-lg hover:bg-yellow-500"
         >
           Get A Free Quote
         </motion.button>
