@@ -33,6 +33,32 @@ const AnimatedPoint = ({ title, description, delay = 0 }) => {
   );
 };
 
+const AnimatedCard = ({ children, delay = 0 }) => {
+  const controls = useAnimation();
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
+
+  useEffect(() => {
+    if (inView) {
+      controls.start({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.6, delay },
+      });
+    }
+  }, [controls, inView, delay]);
+
+  return (
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0, y: 30 }}
+      animate={controls}
+      className="relative flex flex-col gap-4 bg-[#f9f7f2] px-8 py-6 rounded-xl shadow-sm"
+    >
+      {children}
+    </motion.div>
+  );
+};
+
 export default function WhyNepal() {
   const sectionRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -76,7 +102,7 @@ export default function WhyNepal() {
 
   return (
     <div className="pt-20 pb-16 md:pb-24 md:pt-36">
-      <section ref={sectionRef} className="mb-16 md:mb-24 container-margin">
+      <section ref={sectionRef} className="mb-16 md:mb-28 container-margin">
         <div className="flex flex-col items-center justify-between gap-16 md:items-start md:flex-row">
           {/* Left Image */}
           <div className="relative">
@@ -147,10 +173,7 @@ export default function WhyNepal() {
         </h2>
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {treatments.map((item, index) => (
-            <div
-              key={index}
-              className="relative flex flex-col gap-4 bg-[#f9f7f2] px-8 py-6 rounded-xl shadow-sm"
-            >
+            <AnimatedCard key={index} delay={index * 0.1}>
               {/* Popular Badge */}
               {item.highlight && (
                 <div className="absolute right-0 px-3 py-1 text-xs font-medium text-white bg-yellow-400 rounded-md shadow-sm -top-3">
@@ -175,7 +198,7 @@ export default function WhyNepal() {
                 <li>{item.bullet1}</li>
                 <li>{item.bullet2}</li>
               </ul>
-            </div>
+            </AnimatedCard>
           ))}
         </div>
       </section>
