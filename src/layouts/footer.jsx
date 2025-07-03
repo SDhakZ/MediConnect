@@ -18,11 +18,6 @@ export default function Footer() {
             <h4 className="mb-3 text-lg font-semibold">Sections</h4>
             <ul className="space-y-3 text-base font-medium text-secondary-black">
               <li>
-                <a href="/landing/#hero" className="hover:underline">
-                  Home
-                </a>
-              </li>
-              <li>
                 <a href="/landing/#why-nepal" className="hover:underline">
                   Why Nepal?
                 </a>
@@ -41,6 +36,11 @@ export default function Footer() {
               <li>
                 <a href="/services" className="hover:underline">
                   Our Services
+                </a>
+              </li>
+              <li>
+                <a href="/about-us" className="hover:underline">
+                  About Us
                 </a>
               </li>
               <li>
