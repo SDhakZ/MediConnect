@@ -126,6 +126,18 @@ function Navbar() {
             </li>
             <li>
               <a
+                href="/about-us"
+                className={`block px-3 py-2 rounded-sm md:p-0 ${
+                  location.pathname === "/about-us"
+                    ? "text-green-800 font-semibold"
+                    : "text-gray-800 hover:text-green-800"
+                }`}
+              >
+                About Us
+              </a>
+            </li>
+            <li>
+              <a
                 href="/contact"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/contact"

@@ -1,7 +1,7 @@
 export default function ContactUs() {
   return (
     <section className="px-4 py-12 container-margin">
-      <h2 className="mb-16 text-5xl md:text-[64px] font-semibold text-center text-primary-black">
+      <h2 className="mb-16 text-4xl font-semibold text-center md:text-4xl text-primary-black">
         Contact Us
       </h2>
 
