@@ -154,7 +154,7 @@ export default function WhyMediConnect() {
         </div>
       </div>
 
-      <section className="flex flex-col gap-5 items-center justify-center py-12 bg-[#f1f0eb]">
+      {/* <section className="flex flex-col gap-5 items-center justify-center py-12 bg-[#f1f0eb]">
         <div className="flex flex-col items-center justify-center gap-5 container-margin">
           <h2 className="text-xl font-semibold text-primary-black">
             About MediConnect
@@ -167,7 +167,7 @@ export default function WhyMediConnect() {
             every visitor receives safe, comfortable, and rewarding care.
           </p>
         </div>
-      </section>
+      </section> */}
       <section className="pt-16 md:py-24">
         <h2 className="px-10 mb-20 text-4xl font-semibold text-center text-primary-black">
           Program Sectors

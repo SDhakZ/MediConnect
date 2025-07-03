@@ -26,7 +26,7 @@ function Navbar() {
     <nav
       className={`${
         hasShadow ? "shadow-md" : ""
-      } z-[999] px-3 sticky top-0 bg-white w-full border-gray-200 `}
+      } z-[999] px-6 sticky top-0 bg-white w-full border-gray-200 `}
     >
       <div
         className={`flex flex-wrap items-center justify-between max-w-screen-2xl ${

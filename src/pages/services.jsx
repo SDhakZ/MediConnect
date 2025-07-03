@@ -166,6 +166,41 @@ export default function WhyNepal() {
           </div>
         </div>
       </section>
+      <section className="px-4 container-margin">
+        <h2 className="mb-16 text-3xl font-semibold text-center md:text-4xl text-primary-black">
+          Medical Services in Nepal
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {treatments.map((item, index) => (
+            <AnimatedCard key={index} delay={index * 0.1}>
+              {/* Popular Badge */}
+              {item.highlight && (
+                <div className="absolute right-0 px-3 py-1 text-xs font-medium text-white bg-yellow-400 rounded-md shadow-sm -top-3">
+                  Popular Choice
+                </div>
+              )}
+
+              {/* Icon & Title */}
+              <div className="flex items-center gap-4">
+                <img
+                  src={item.icon}
+                  alt={`${item.title} Icon`}
+                  className="w-12 h-12 p-1 border-2 border-[#CECBBE] rounded-md"
+                />
+                <h4 className="text-lg font-semibold text-primary-black">
+                  {item.title}
+                </h4>
+              </div>
+
+              {/* Bullets */}
+              <ul className="pl-0 space-y-3 text-base list-disc list-outside text-secondary-black">
+                <li>{item.bullet1}</li>
+                <li>{item.bullet2}</li>
+              </ul>
+            </AnimatedCard>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

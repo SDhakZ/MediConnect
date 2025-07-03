@@ -40,9 +40,10 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mb-6 text-3xl md:text-[64px] leading-tight font-semibold"
+          className="mb-6 text-3xl md:text-[56px] max-w-5xl leading-tight font-semibold"
         >
-          Your Healing Journey <br /> Starts in Nepal
+          Begin Your Journey to <br /> Health and Healing <br />
+          in the Heart of Nepal
         </motion.h1>
 
         <motion.p
@@ -54,7 +55,7 @@ export default function Hero() {
           Discover affordable, world-class treatment in Nepal —
           <br className="hidden sm:block" /> where healing meets serenity.
         </motion.p>
-
+        {/* 
         <motion.button
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -62,7 +63,7 @@ export default function Hero() {
           className="px-7 py-4 font-medium text-white transition-all bg-[#AEA800] rounded-full shadow-lg hover:bg-yellow-500"
         >
           Get A Free Quote
-        </motion.button>
+        </motion.button> */}
       </div>
     </section>
   );
