@@ -69,8 +69,8 @@ function Navbar() {
                 href="/landing"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/landing"
-                    ? "text-[#13618B] font-semibold"
-                    : "text-gray-800 hover:text-[#13618B]"
+                    ? "text-green-800 font-semibold"
+                    : "text-gray-800 hover:text-green-800"
                 }`}
               >
                 Landing
@@ -78,11 +78,11 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#why-nepal"
+                href="/landing/#why-nepal"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/why-nepal"
-                    ? "text-blue-700 font-semibold"
-                    : "text-gray-800 hover:text-blue-700"
+                    ? "text-green-800 font-semibold"
+                    : "text-gray-800 hover:text-green-800"
                 }`}
               >
                 Why Nepal?
@@ -90,11 +90,11 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#why-mediconnect"
+                href="/landing/#why-mediconnect"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/why-mediconnect"
-                    ? "text-blue-700 font-semibold"
-                    : "text-gray-800 hover:text-blue-700"
+                    ? "text-green-800 font-semibold"
+                    : "text-gray-800 hover:text-green-800"
                 }`}
               >
                 Why MediConnect?
@@ -102,11 +102,11 @@ function Navbar() {
             </li>{" "}
             <li>
               <a
-                href="#commitment"
+                href="/landing/#commitment"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
-                  location.pathname === "/our-commitment"
-                    ? "text-blue-700 font-semibold"
-                    : "text-gray-800 hover:text-blue-700"
+                  location.pathname === "/landing/#commitment"
+                    ? "text-green-800 font-semibold"
+                    : "text-gray-800 hover:text-green-800"
                 }`}
               >
                 Our Commitment
@@ -114,11 +114,23 @@ function Navbar() {
             </li>
             <li>
               <a
-                href="#contact"
+                href="/services"
+                className={`block px-3 py-2 rounded-sm md:p-0 ${
+                  location.pathname === "/services"
+                    ? "text-green-800 font-semibold"
+                    : "text-gray-800 hover:text-green-800"
+                }`}
+              >
+                Our Services
+              </a>
+            </li>
+            <li>
+              <a
+                href="/landing/#contact"
                 className={`block px-3 py-2 rounded-sm md:p-0 ${
                   location.pathname === "/contact"
-                    ? "text-blue-700 font-semibold"
-                    : "text-gray-800 hover:text-blue-700"
+                    ? "text-green-800 font-semibold"
+                    : "text-gray-800 hover:text-green-800"
                 }`}
               >
                 Contact

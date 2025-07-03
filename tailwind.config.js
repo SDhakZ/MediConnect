@@ -3,6 +3,9 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontSize: {
+        "fluid-h1": "clamp(1.75rem, 4vw, 3.3rem)",
+      },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],

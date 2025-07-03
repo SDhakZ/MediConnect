@@ -11,10 +11,10 @@ const AnimatedCard = ({ icon, title, description, delay = 0 }) => {
       initial={{ opacity: 0, y: 20 }}
       animate={inView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.6, delay }}
-      className="p-5 transition-all bg-white border-[#AEC7D4] border-2 shadow-sm rounded-xl hover:shadow-md"
+      className="p-5 hover:bg-[#E1EBDD] cursor-default transition-all bg-white border-[#A8BCA1] border-2 shadow-sm rounded-xl hover:shadow-md"
     >
       <div className="mb-2 text-xl">{icon}</div>
-      <h4 className="mb-1 font-semibold text-md text-primary-black">{title}</h4>
+      <h4 className="mb-1 text-lg font-semibold text-primary-black">{title}</h4>
       <p className="text-sm leading-relaxed text-secondary-black">
         {description}
       </p>
@@ -58,18 +58,14 @@ export default function CommitmentToNepal() {
   const rotate = useTransform(scrollYProgress, [0, 1], [0, 90]);
   return (
     <section
-      className="py-16 md:py-24 bg-gradient-to-b w-full flex justify-center from-[#EBF8FF] to-white"
+      className="py-16 md:py-24 bg-gradient-to-b w-full flex justify-center from-[#E1EBDD] to-white"
       id="commitment"
     >
       <div className="max-w-screen-2xl">
         {/* Left image + text */}
         <div className="flex flex-col items-center gap-20 md:flex-row">
-          <div className="hidden md:block w-full max-w-[400px] md:max-w-[790px]">
-            <img
-              src="/lake-mountain.webp"
-              alt="Lake & Mountain"
-              className="w-full"
-            />
+          <div className="hidden md:block overflow-hidden rounded-xl w-full max-w-[400px] md:max-w-[790px]">
+            <img src="/hero.webp" alt="Lake & Mountain" className="w-full" />
           </div>
 
           <div className="flex flex-col items-center gap-2 px-10 md:items-start md:px-0">
@@ -77,11 +73,7 @@ export default function CommitmentToNepal() {
               Beyond Healthcare: Our Commitment to Nepal
             </h2>
             <div className="mt-6 md:hidden w-full  md:max-w-[790px]">
-              <img
-                src="/lake-mountain.webp"
-                alt="Lake & Mountain"
-                className="w-full"
-              />
+              <img src="/hero.webp" alt="Lake & Mountain" className="w-full" />
             </div>
             <p className="mt-6 text-xl leading-relaxed text-center md:text-left md:mt-2 md:max-w-lg text-secondary-black">
               We promote green practices through eco-friendly recovery lodges,
@@ -94,7 +86,7 @@ export default function CommitmentToNepal() {
 
         <div className="grid px-10 md:grid-cols-[1fr_1fr] mt-16 md:mt-24 lg:grid-cols-[1fr_2fr] gap-6 ">
           {/* Blue Feature Card */}
-          <div className="bg-[#dbeafe] shadow-md flex flex-col overflow-hidden px-6 py-8 rounded-xl relative h-full">
+          <div className="bg-[#dce9d7] shadow-md flex flex-col overflow-hidden px-6 py-8 rounded-xl relative h-full">
             <h4 className="mb-2 text-3xl font-semibold text-primary-black">
               Let Your Recovery Take You Further
             </h4>
@@ -104,7 +96,7 @@ export default function CommitmentToNepal() {
             </p>
             <a
               href="#contact"
-              className="mt-auto text-[#13618B] font-medium py-4 border-2 border-[#13618B] rounded-full w-full max-w-[170px] flex items-center justify-center"
+              className="mt-auto text-[#657660] font-medium py-4 border-2 border-[#657660] rounded-full w-full max-w-[170px] flex items-center justify-center"
             >
               Contact Us
             </a>

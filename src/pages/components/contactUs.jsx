@@ -38,7 +38,7 @@ export default function ContactUs() {
           </form>
 
           {/* Right: Contact Info */}
-          <div className="bg-[#f7f5f0] rounded-xl p-6 mt-8 md:mt-0 text-sm leading-relaxed">
+          <div className="bg-[#E1EBDD] rounded-xl p-6 mt-8 md:mt-0 text-sm leading-relaxed">
             <h4 className="mb-2 font-semibold text-[20px] text-primary-black">
               MediConnect Pokhara
             </h4>
@@ -75,7 +75,7 @@ export default function ContactUs() {
         </div>{" "}
         <button
           type="submit"
-          className="hidden px-12 py-3 mt-2 font-medium text-white transition-all bg-green-600 rounded-full md:flex hover:bg-green-700"
+          className="hidden px-12 py-3 mt-2 font-medium text-white transition-all bg-[#6d9761] rounded-full md:flex hover:bg-green-700"
         >
           Submit
         </button>

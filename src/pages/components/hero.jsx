@@ -35,18 +35,18 @@ export default function Hero() {
         ref={bgRef}
         className="absolute inset-0 z-0 parallax-bg will-change-transform"
       />
-      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 text-center text-white">
+      <div className="relative z-10 flex flex-col items-center justify-center h-full px-4 ">
         <motion.h1
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="mb-6 text-3xl md:text-[56px] max-w-5xl leading-tight font-semibold"
+          className="w-full container-margin mb-6 text-fluid-h1  text-[#fff] leading-tight font-semibold"
         >
           Begin Your Journey to <br /> Health and Healing <br />
           in the Heart of Nepal
         </motion.h1>
 
-        <motion.p
+        {/* <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1.2, delay: 0.2 }}
@@ -54,7 +54,7 @@ export default function Hero() {
         >
           Discover affordable, world-class treatment in Nepal —
           <br className="hidden sm:block" /> where healing meets serenity.
-        </motion.p>
+        </motion.p> */}
         {/* 
         <motion.button
           initial={{ opacity: 0, y: 20 }}

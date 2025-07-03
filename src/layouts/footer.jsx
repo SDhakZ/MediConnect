@@ -1,7 +1,7 @@
 export default function Footer() {
   return (
     <footer className="relative flex justify-center w-full mx-auto">
-      <div className="bg-[#f1f0eb] w-full max-w-screen-2xl py-12 mb-10 rounded-3xl mt-20">
+      <div className="bg-[#dce9d7] w-full max-w-screen-2xl py-12 mb-10 rounded-3xl mt-20">
         <div className="grid gap-10 mx-auto text-sm container-margin md:grid-cols-3 text-primary-black">
           {/* Column 1: Brand */}
           <div>

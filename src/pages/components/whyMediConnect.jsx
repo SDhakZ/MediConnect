@@ -18,28 +18,32 @@ const hexImages = [
 
 const services = [
   {
+    id: "hospitals",
     title: "Hospitals & Health Services",
     description:
       "We connect you with accredited hospitals and skilled doctors across specialties — ensuring top-quality care at globally recognized standards.",
   },
   {
+    id: "hotels",
     title: "Hotels & Hospitality",
     description:
       "Stay in carefully selected accommodations near your treatment center — from comfort stays to luxury wellness resorts.",
   },
   {
+    id: "healing",
     title: "Wellness & Healing Centers",
     description:
       "Enhance your recovery with yoga, naturopathy, Ayurvedic treatments, and clean, locally sourced nutrition support.",
   },
   {
-    title: "Travel & Adventure Support",
+    id: "adventure",
+    title: "Adventure Tourism",
     description:
       "We help you plan your journey, including flights, visa coordination, airport pickup, and optional sightseeing or treks tailored to your health needs.",
   },
 ];
 
-const AnimatedPoint = ({ title, description, delay = 0 }) => {
+const AnimatedPoint = ({ title, id, description, delay = 0, type }) => {
   const controls = useAnimation();
   const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
 
@@ -54,17 +58,45 @@ const AnimatedPoint = ({ title, description, delay = 0 }) => {
   }, [inView, controls, delay]);
 
   return (
-    <motion.li
-      ref={ref}
-      initial={{ opacity: 0, y: 20 }}
-      animate={controls}
-      className="flex flex-col gap-3"
-    >
-      <h4 className="text-xl font-semibold text-primary-black">{title}</h4>
-      <p className="text-sm max-w-[440px] leading-relaxed text-secondary-black">
-        {description}
-      </p>
-    </motion.li>
+    <>
+      {!id && (
+        <motion.li
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={controls}
+          className="flex flex-col gap-3"
+        >
+          <h4 className="text-xl font-semibold text-primary-black">{title}</h4>
+          <p className="text-sm max-w-[440px] leading-relaxed text-secondary-black">
+            {description}
+          </p>
+        </motion.li>
+      )}
+      {id && (
+        <motion.a
+          href={`/services#${id}`}
+          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          animate={controls}
+          className="flex group hover:bg-[#d4eef3] transition-colors duration-300 flex-col w-full gap-3 px-6 py-4 border border-[#a1b5bc] rounded-lg"
+        >
+          <h4 className="text-xl font-semibold transition-colors duration-200 text-primary-black">
+            {title}
+          </h4>
+          <p className="text-sm max-w-[440px] leading-relaxed text-secondary-black">
+            {description}
+          </p>
+          {/* {id && (
+            <a
+              href={`/services#${id}`}
+              className="text-sm font-medium text-green-600 hover:underline"
+            >
+              Read more →
+            </a>
+          )} */}
+        </motion.a>
+      )}
+    </>
   );
 };
 
@@ -172,18 +204,19 @@ export default function WhyMediConnect() {
         <h2 className="px-10 mb-20 text-4xl font-semibold text-center text-primary-black">
           Program Sectors
         </h2>
-        <div className="flex flex-col items-center gap-20 mx-auto md:flex md:flex-row container-margin">
+        <div className="flex flex-col items-center gap-16 mx-auto md:flex md:flex-row container-margin">
           {/* Hex Grid */}
           <div className="max-w-[600px]">
             <img className="w-full" src="/hexagon.webp" />
           </div>
           {/* Text Column */}
-          <div className="max-w-[400px] space-y-10">
-            <ul className="flex flex-col gap-10">
+          <div>
+            <ul className="flex flex-col gap-6">
               {services.map((item, idx) => (
                 <AnimatedPoint
                   key={idx}
                   title={item.title}
+                  id={item.id}
                   description={item.description}
                   delay={idx * 0.2}
                 />

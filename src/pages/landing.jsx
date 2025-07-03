@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Hero from "./components/hero";
 import WhyNepal from "./components/whyNepal";
 import WhyMediConnect from "./components/whyMediConnect";
@@ -7,6 +8,15 @@ import ContactUs from "./components/contactUs";
 import Footer from "../layouts/footer";
 
 export default function Landing() {
+  const { hash } = useLocation();
+  useEffect(() => {
+    if (hash) {
+      const element = document.getElementById(hash.substring(1)); // Remove '#'
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [hash]);
   return (
     <div className="">
       <section className="pt-[64px] -mt-[64px] " id="hero">

@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useScroll, useTransform, motion, useAnimation } from "framer-motion";
 import { useRef } from "react";
-import { treatments } from "../../data/treatment";
 
 import { useInView } from "react-intersection-observer";
 const AnimatedPoint = ({ title, description, delay = 0 }) => {
@@ -115,7 +114,7 @@ export default function WhyNepal() {
             </div>
             <motion.img
               style={{ rotate }}
-              className="absolute max-w-[80px] md:max-w-none -right-[38px] -bottom-[40px] md:-right-[71px] md:-bottom-16 "
+              className="absolute max-w-[80px] md:max-w-[132px] -right-[38px] -bottom-[40px] md:-right-[71px] md:-bottom-16 "
               src="/Rectangle.png"
               alt="Rotating Accent"
             />
@@ -140,7 +139,7 @@ export default function WhyNepal() {
         </div>
 
         {/* Bottom row */}
-        <div className="flex flex-col-reverse items-center justify-center mt-14 gap-14 md:mt-24 md:flex-row">
+        <div className="flex flex-col-reverse items-center justify-center mt-14 gap-14 md:mt-28 md:flex-row">
           <div className="space-y-6">
             <ul className="space-y-9 md:space-y-10 max-w-[450px] text-gray-700">
               {whyNepal.slice(4, 6).map((data, idx) => (
