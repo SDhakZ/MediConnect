@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { useScroll, motion, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { services } from "../data/services";
 import { useLocation } from "react-router-dom";
