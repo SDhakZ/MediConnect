@@ -9,19 +9,19 @@ export const services = {
         "Facial Rejuvenation, Rhinoplasty, Liposuction, and Body Contouring performed by certified plastic surgeons with a focus on safety, results, and privacy.",
     },
     {
-      id: "dental",
-      title: "Advanced Dental Care",
-      icon: "/icons/dental.png",
-      description:
-        "Teeth Whitening, Dental Implants, Smile Design, and Orthodontics with affordable, high-quality treatments from experienced dental professionals.",
-    },
-    {
       id: "ivf",
       title: "IVF & Fertility Treatments",
       icon: "/icons/fertility.png",
       highlight: true,
       description:
         "IVF, IUI, Egg Donation, and Surrogacy Programs offered with discreet and compassionate care using advanced reproductive technologies.",
+    },
+    {
+      id: "dental",
+      title: "Advanced Dental Care",
+      icon: "/icons/dental.png",
+      description:
+        "Teeth Whitening, Dental Implants, Smile Design, and Orthodontics with affordable, high-quality treatments from experienced dental professionals.",
     },
     {
       id: "trauma",
@@ -37,20 +37,21 @@ export const services = {
       description:
         "Psychiatric consultations, therapy sessions, and rehabilitation delivered with compassionate care focused on emotional well-being and recovery.",
     },
-    {
+    /*     {
       id: "eye",
       title: "Ophthalmology & Eye Care",
       icon: "/icons/eye.png",
       highlight: true,
       description:
         "Cataract Surgery, LASIK, Corneal Transplants, and Vision Correction trusted by local and international patients for precise and safe vision care.",
-    },
+    }, */
   ],
   hotels: [
     {
       id: "accommodation",
       title: "Accommodation Services",
       icon: "/icons/accomodation.png",
+      highlight: true,
       description:
         "Luxury stays, boutique hotels, and resort facilities offering comfortable lodging with premium service in serene locations.",
     },
@@ -78,9 +79,18 @@ export const services = {
   ],
   healingCenters: [
     {
+      id: "ayurveda",
+      title: "Ayurvedic Treatment & Panchakarma",
+      icon: "/icons/herbal.png",
+      highlight: true,
+      description:
+        "Detox, rejuvenation, and dosha-balancing treatments based on authentic Ayurvedic care using herbal medicine and oils.",
+    },
+    {
       id: "meditation",
       title: "Meditation Retreats",
       icon: "/icons/meditation.png",
+      highlight: true,
       description:
         "Guided silent retreats and mindfulness practices in peaceful settings that promote mental clarity and emotional balance.",
     },
@@ -88,6 +98,7 @@ export const services = {
       id: "yoga",
       title: "Yoga & Holistic Therapy",
       icon: "/icons/yoga.png",
+      highlight: true,
       description:
         "Daily yoga sessions and breathwork routines that boost flexibility, inner calm, and holistic well-being.",
     },
@@ -119,14 +130,7 @@ export const services = {
       description:
         "Shamanic rituals, local herbs, and community-based knowledge rooted in Nepal’s rich healing traditions.",
     },
-    {
-      id: "ayurveda",
-      title: "Ayurvedic Treatment & Panchakarma",
-      icon: "/icons/herbal.png",
-      highlight: true,
-      description:
-        "Detox, rejuvenation, and dosha-balancing treatments based on authentic Ayurvedic care using herbal medicine and oils.",
-    },
+
     {
       id: "training",
       title: "Healing Training & TOT",
@@ -140,6 +144,7 @@ export const services = {
       id: "trekking",
       title: "Trekking Expeditions",
       icon: "/icons/trekking.png",
+      highlight: true,
       description:
         "Guided treks to Everest, Annapurna, and remote trails offering culturally rich and physically rewarding experiences.",
     },
@@ -147,15 +152,17 @@ export const services = {
       id: "mountaineering",
       title: "High-Altitude Mountaineering",
       icon: "/icons/mountaineering.png",
+      highlight: true,
       description:
         "Climbs led by certified Sherpas and mountain experts equipped with safety gear and acclimatization support.",
     },
     {
-      id: "sports",
-      title: "Adventure Sports",
-      icon: "/icons/sports.png",
+      id: "rafting",
+      title: "White Water Rafting",
+      icon: "/icons/rafting.png",
+      highlight: true,
       description:
-        "Ziplining, canyoning, bungee jumping, and rock climbing experiences designed for thrill-seekers of all levels.",
+        "Navigate thrilling rapids from beginner to expert levels along Nepal’s major rivers in scenic group adventures.",
     },
     {
       id: "paragliding",
@@ -165,18 +172,18 @@ export const services = {
         "Fly over scenic valleys like Pokhara and Bandipur with certified instructors and tandem flight options.",
     },
     {
-      id: "rafting",
-      title: "White Water Rafting",
-      icon: "/icons/rafting.png",
-      description:
-        "Navigate thrilling rapids from beginner to expert levels along Nepal’s major rivers in scenic group adventures.",
-    },
-    {
       id: "mountain-biking",
       title: "Mountain Biking Trails",
       icon: "/icons/mountain_biking.png",
       description:
         "Ride through hills, forests, and traditional villages for an adventurous and culturally immersive journey on two wheels.",
+    },
+    {
+      id: "sports",
+      title: "Adventure Sports",
+      icon: "/icons/sports.png",
+      description:
+        "Ziplining, canyoning, bungee jumping, and rock climbing experiences designed for thrill-seekers of all levels.",
     },
   ],
 };
