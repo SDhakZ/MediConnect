@@ -76,42 +76,7 @@ function Navbar() {
                 Landing
               </a>
             </li>
-            <li>
-              <a
-                href="/landing/#why-nepal"
-                className={`block px-3 py-2 rounded-sm md:p-0 ${
-                  location.pathname === "/why-nepal"
-                    ? "text-green-800 font-semibold"
-                    : "text-gray-800 hover:text-green-800"
-                }`}
-              >
-                Why Nepal?
-              </a>
-            </li>
-            <li>
-              <a
-                href="/landing/#why-mediconnect"
-                className={`block px-3 py-2 rounded-sm md:p-0 ${
-                  location.pathname === "/why-mediconnect"
-                    ? "text-green-800 font-semibold"
-                    : "text-gray-800 hover:text-green-800"
-                }`}
-              >
-                Why MediConnect?
-              </a>
-            </li>{" "}
-            <li>
-              <a
-                href="/landing/#commitment"
-                className={`block px-3 py-2 rounded-sm md:p-0 ${
-                  location.pathname === "/landing/#commitment"
-                    ? "text-green-800 font-semibold"
-                    : "text-gray-800 hover:text-green-800"
-                }`}
-              >
-                Our Commitment
-              </a>
-            </li>
+
             <li>
               <a
                 href="/services"
