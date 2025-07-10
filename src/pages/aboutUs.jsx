@@ -58,7 +58,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div data-lenis-prevent className="px-4 py-16 space-y-20 container-margin">
+    <div data-lenis-prevent className="py-16 space-y-20  container-margin">
       {/* About Section */}
       <section className="max-w-4xl mx-auto space-y-6 text-center">
         <h1 className="text-3xl font-semibold md:text-4xl text-primary-black">
