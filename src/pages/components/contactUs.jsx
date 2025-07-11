@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 
 export default function ContactUs() {
-  const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  /*   const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const recaptchaRef = useRef(null);
   const [formData, setFormData] = useState({
     name: "",
@@ -59,6 +59,23 @@ export default function ContactUs() {
         setStatus("idle");
       }
     }
+  }; */
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    alert("This feature is currently disabled for maintenance.");
+  };
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
   };
   return (
     <section className="px-4 py-12 container-margin">
@@ -176,13 +193,13 @@ export default function ContactUs() {
             {status === "idle" && "Submit"}
           </button>
 
-          <ReCAPTCHA
+          {/* <ReCAPTCHA
             style={{ display: "hidden" }}
             ref={recaptchaRef}
             sitekey={sitekey}
             size="invisible"
             badge
-          />
+          /> */}
         </div>
       </div>
     </section>
