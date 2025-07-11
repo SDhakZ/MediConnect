@@ -188,9 +188,10 @@ export default function ContactUs() {
                 : "bg-[#6d9761] hover:bg-green-700 text-white"
             } ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
           >
-            {status === "loading" && "Sending..."}
+            {/* {status === "loading" && "Sending..."}
             {status === "success" && "Sent!"}
-            {status === "idle" && "Submit"}
+            {status === "idle" && "Submit"} */}
+            Submit
           </button>
 
           {/* <ReCAPTCHA
