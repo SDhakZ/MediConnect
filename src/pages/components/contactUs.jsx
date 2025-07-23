@@ -146,7 +146,9 @@ export default function ContactUs() {
                   value={formData.service}
                   onChange={handleChange}
                   disabled={!formData.sector}
-                  className="w-full cursor-pointer px-4 py-3 pr-10 border-2 border-[#76776f] rounded-md appearance-none bg-white"
+                  className={`w-full ${
+                    formData.sector ? "cursor-pointer" : "cursor-not-allowed"
+                  } px-4 py-3 pr-10 border-2 border-[#76776f] rounded-md appearance-none bg-white`}
                 >
                   <option value="" disabled>
                     {formData.sector ? "Select Service" : "Choose sector first"}
