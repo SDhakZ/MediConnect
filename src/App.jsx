@@ -6,6 +6,7 @@ import NavLayout from "./layouts/layout";
 import Services from "./pages/services";
 import ContactUs from "./pages/components/contactUs";
 import AboutUs from "./pages/aboutUs";
+import ProgramSectors from "./pages/programSectors";
 config.autoAddCss = false;
 import "./index.css";
 function App() {
@@ -17,6 +18,7 @@ function App() {
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
+        <Route path="/program-sectors/:category" element={<ProgramSectors />} />
         <Route path="*" element={<div>404 Not Found</div>} />
       </Route>
     </Routes>

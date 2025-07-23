@@ -77,7 +77,7 @@ export const services = {
         "Middle Eastern food, cultural hospitality, and Arabic-speaking staff for a tailored experience for guests from Arabic-speaking countries.",
     },
   ],
-  healingCenters: [
+  wellness: [
     {
       id: "ayurveda",
       title: "Ayurvedic Treatment & Panchakarma",

@@ -1,10 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { useLocation } from "react-router-dom";
 
 function Navbar() {
   const location = useLocation();
   const [hasShadow, setHasShadow] = useState(false);
   const [shrink, setHasShrink] = useState(false);
+
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const closeTimeoutRef = useRef(null);
+
+  const handleMouseEnter = () => {
+    clearTimeout(closeTimeoutRef.current);
+    setIsDropdownOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    closeTimeoutRef.current = setTimeout(() => {
+      setIsDropdownOpen(false);
+    }, 300); // You can adjust delay here
+  };
 
   useEffect(() => {
     const handleScroll = () => {
@@ -64,23 +78,10 @@ function Navbar() {
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="flex flex-col items-center p-4 mt-4 text-sm font-medium border border-gray-100 rounded-lg md:p-0 bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-white">
-            <li>
-              <a
-                href="/landing"
-                className={`block px-3 py-2 rounded-sm md:p-0 ${
-                  location.pathname === "/landing"
-                    ? "text-green-800 font-semibold"
-                    : "text-gray-800 hover:text-green-800"
-                }`}
-              >
-                Landing
-              </a>
-            </li>
-
-            <li>
+            {/* <li className="py-2">
               <a
                 href="/services"
-                className={`block px-3 py-2 rounded-sm md:p-0 ${
+                className={`block px-3 h-full py-2 rounded-sm ${
                   location.pathname === "/services"
                     ? "text-green-800 font-semibold"
                     : "text-gray-800 hover:text-green-800"
@@ -88,11 +89,64 @@ function Navbar() {
               >
                 Our Services
               </a>
+            </li> */}
+            <li
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className="relative h-full group"
+            >
+              <a
+                className={`block px-3 py-2 rounded-sm  cursor-pointer ${
+                  location.pathname.startsWith("/program-sectors")
+                    ? "text-green-800 font-semibold"
+                    : "text-gray-800 hover:text-green-800"
+                }`}
+              >
+                Program Sectors
+              </a>
+
+              {isDropdownOpen && (
+                <ul className="absolute left-0 z-50 w-64 mt-2 bg-white border rounded-md shadow-lg top-full">
+                  <li>
+                    <a
+                      href="/program-sectors/hospitals"
+                      className="block px-4 py-3 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Hospitals & Health Services
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/program-sectors/hotels"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Hotels & Hospitality
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/program-sectors/wellness"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Wellness & Healing Centres
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="/program-sectors/adventure"
+                      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                    >
+                      Adventure Tourism
+                    </a>
+                  </li>
+                </ul>
+              )}
             </li>
+
             <li>
               <a
                 href="/about-us"
-                className={`block px-3 py-2 rounded-sm md:p-0 ${
+                className={`block px-3 py-2 rounded-sm  ${
                   location.pathname === "/about-us"
                     ? "text-green-800 font-semibold"
                     : "text-gray-800 hover:text-green-800"
@@ -104,7 +158,7 @@ function Navbar() {
             <li>
               <a
                 href="/contact"
-                className={`block px-3 py-2 rounded-sm md:p-0 ${
+                className={`block px-3 py-2 rounded-sm ${
                   location.pathname === "/contact"
                     ? "text-green-800 font-semibold"
                     : "text-gray-800 hover:text-green-800"
