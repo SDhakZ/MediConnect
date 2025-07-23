@@ -4,6 +4,7 @@ import { services } from "../data/services";
 import { motion, useAnimation } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { useLocation } from "react-router-dom";
+import ContactUs from "./components/contactUs";
 
 const AnimatedCard = ({ children, delay = 0 }) => {
   const { hash } = useLocation();
@@ -40,10 +41,10 @@ const AnimatedCard = ({ children, delay = 0 }) => {
   );
 };
 
-const SectionGroup = ({ title, items, id }) => (
+const SectionGroup = ({ items, id }) => (
   <div id={id} className="mb-20 scroll-mt-28">
     <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-      {items.map((item, index) => (
+      {items.items.map((item, index) => (
         <AnimatedCard key={item.id} delay={index * 0.1}>
           {/* Popular Badge */}
           {item.highlight && (
@@ -85,7 +86,7 @@ export default function ProgramSectors() {
   };
 
   const selectedData = services[category];
-  const title = sectionTitles[category];
+  const title = services[category]?.title || "Program Sectors";
 
   if (!selectedData) {
     return (
@@ -104,6 +105,7 @@ export default function ProgramSectors() {
 
         <SectionGroup id={category} title={title} items={selectedData} />
       </section>
+      <ContactUs />
     </div>
   );
 }
