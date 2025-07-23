@@ -105,7 +105,7 @@ export default function ProgramSectors() {
 
         <SectionGroup id={category} title={title} items={selectedData} />
       </section>
-      <ContactUs />
+      <ContactUs category={category} />
     </div>
   );
 }

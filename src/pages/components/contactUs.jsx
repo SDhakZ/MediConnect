@@ -1,5 +1,5 @@
 import ReCAPTCHA from "react-google-recaptcha";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { services } from "../../data/services";
 const sectorOptions = Object.entries(services); // [[key, { title, items }], ...]
@@ -9,14 +9,21 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 const getServiceOptions = (sector) =>
   services[sector]?.items.map((item) => item.title) || [];
 
-export default function ContactUs() {
+export default function ContactUs({ category }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    sector: "",
+    sector: category || "", // initialize with category if available
     service: "",
     message: "",
   });
+
+  useEffect(() => {
+    if (category && !formData.sector) {
+      setFormData((prev) => ({ ...prev, sector: category }));
+    }
+  }, [category, formData.sector]);
+
   const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const recaptchaRef = useRef(null);
 

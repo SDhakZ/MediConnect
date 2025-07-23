@@ -9,7 +9,8 @@ import { Document, Page, pdfjs } from "react-pdf";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-
+import { faDownload } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // Set worker path
 const NextArrow = ({ onClick }) => (
   <div
@@ -58,7 +59,7 @@ export default function AboutUs() {
   };
 
   return (
-    <div data-lenis-prevent className="py-16 space-y-20  container-margin">
+    <div data-lenis-prevent className="py-16 space-y-20 container-margin">
       {/* About Section */}
       <section className="max-w-4xl mx-auto space-y-6 text-center">
         <h1 className="text-3xl font-semibold md:text-4xl text-primary-black">
@@ -96,6 +97,25 @@ export default function AboutUs() {
           </Slider>
         </div>
       </section>
+      <section className="max-w-4xl px-4 py-10 mx-auto mt-10 space-y-4 text-center bg-gray-100 rounded-lg">
+        <p className="max-w-2xl mx-auto text-base md:text-lg text-secondary-black">
+          For a more in-depth look at our community stories and milestones,
+          download our magazine below.
+        </p>
+        <div className="flex items-center justify-center mt-4">
+          <a
+            href="https://drive.google.com/uc?export=download&id=1LtdE3rwit1cGlO4DEWGC_wPFlhfRzdaG"
+            className="flex items-center justify-center px-6 py-3 font-medium text-white transition bg-green-600 rounded-full max-w-fit hover:bg-green-700"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FontAwesomeIcon icon={faDownload} className="w-4 mr-2" size="lg" />{" "}
+            Download Magazine
+          </a>
+        </div>
+      </section>
+
       {/* Gallery Section */}
       <section className="6">
         <h2 className="mt-16 mb-8 text-2xl font-semibold text-center md:text-3xl text-primary-black">
