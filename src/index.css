@@ -76,3 +76,35 @@ input::-ms-clear {
 .hexagon {
   clip-path: polygon(50% 0%, 93% 25%, 93% 75%, 50% 100%, 7% 75%, 7% 25%);
 }
+
+.gradient {
+  /* Display & Box Model */
+
+  --bg-size: 300%;
+  /* Other */
+  --color-one: #0c1636;
+  --color-two: #024b75;
+  --color-three: #003464;
+  background: linear-gradient(
+      45deg,
+      var(--color-one),
+      var(--color-two),
+      var(--color-three),
+      var(--color-one)
+    )
+    0 0 / var(--bg-size) 120%;
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text;
+  animation: move-bg 10s infinite linear;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes move-bg {
+  to {
+    background-position: var(--bg-size) 0;
+  }
+}
