@@ -30,7 +30,7 @@ const services = [
       "Stay in carefully selected accommodations near your treatment center — from comfort stays to luxury wellness resorts.",
   },
   {
-    id: "healing",
+    id: "wellness",
     title: "Wellness & Healing Centers",
     description:
       "Enhance your recovery with yoga, naturopathy, Ayurvedic treatments, and clean, locally sourced nutrition support.",
@@ -74,7 +74,7 @@ const AnimatedPoint = ({ title, id, description, delay = 0, type }) => {
       )}
       {id && (
         <motion.a
-          href={`/services#${id}`}
+          href={`/program-sectors/${id}`}
           ref={ref}
           initial={{ opacity: 0, y: 20 }}
           animate={controls}
