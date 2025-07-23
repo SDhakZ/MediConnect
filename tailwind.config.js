@@ -4,11 +4,12 @@ export default {
   theme: {
     extend: {
       fontSize: {
-        "fluid-h1": "clamp(1.75rem, 4vw, 3.3rem)",
+        "fluid-h1": "clamp(1.75rem, 3vw, 3.5rem)",
       },
       fontFamily: {
         inter: ["Inter", "sans-serif"],
         poppins: ["Poppins", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
       },
       animation: {
         blink1: "blink 4s infinite 0s", // Submit blinks first

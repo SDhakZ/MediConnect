@@ -40,7 +40,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1 }}
-          className="w-full container-margin mb-6 text-fluid-h1  text-[#fff] leading-tight font-semibold"
+          className="px-16 font-playfair text-center bg-white/30 backdrop-blur-sm p-6 md:p-10 rounded-xl shadow-lg max-w-2xl py-8   mb-6 text-fluid-h1  text-[#133c5e] leading-tight font-semibold"
         >
           Begin Your Journey to <br /> Health and Healing <br />
           in the Heart of Nepal
