@@ -1,0 +1,31 @@
+name: Mediconnect Pokhara Main CI/CD
+
+on:
+  push:
+    branches: ["main"]
+
+jobs:
+  deploy:
+    runs-on: production
+    env:
+      PROJECT_DIR: ${{ github.workspace }}
+      CREDS_DIR: /home/abu/.creds
+      NGINX_WEB_DIR: /var/www/html/mediconnect-web
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Check Node.js version (pre-installed)
+        run: node -v
+
+      - name: Insert credentials
+        run: |
+          cp $CREDS_DIR/mediconnect.frontend.env $PROJECT_DIR/.env
+
+      - run: npm install
+
+      - run: npm run build
+
+      - name: Copy Dist file to the respective filepath
+        run: sudo cp -r $PROJECT_DIR/dist/* $NGINX_WEB_DIR

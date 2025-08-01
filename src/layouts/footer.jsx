@@ -88,7 +88,7 @@ export default function Footer() {
                 <span className="font-semibold">Address:</span> 9th Street
                 Lakeside, Pokhara
                 <br />
-                <span className="font-semibold">Phone:</span> +977 061 419116
+                <span className="font-semibold">Phone:</span> +977 061 453104
               </p>
 
               <h4 className="mb-1 text-lg font-semibold text-primary-black">
