@@ -288,7 +288,7 @@ export default function ContactUs({ category }) {
         </div>
       </div>
 
-      {/* ✅ Modal */}
+      {/* Modal */}
       {showModal && (
         <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
           <div className="max-w-sm p-6 text-center bg-white rounded-lg shadow-xl">
