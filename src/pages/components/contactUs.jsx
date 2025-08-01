@@ -19,6 +19,13 @@ export default function ContactUs({ category }) {
   });
 
   const [status, setStatus] = useState("idle");
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState({
+    title: "",
+    message: "",
+    success: true,
+  });
+
   const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
   const recaptchaRef = useRef(null);
 
@@ -30,7 +37,6 @@ export default function ContactUs({ category }) {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-
     setFormData((prev) => ({
       ...prev,
       [name]: value,
@@ -75,11 +81,26 @@ export default function ContactUs({ category }) {
           service: "",
         });
 
+        setModalContent({
+          title: "Message Sent!",
+          message:
+            "Your message has been successfully submitted. We'll contact you soon.",
+          success: true,
+        });
+        setShowModal(true);
+
         setTimeout(() => {
           setStatus("idle");
         }, 3000);
       } catch (error) {
         console.error("EmailJS error:", error);
+        setModalContent({
+          title: "Submission Failed",
+          message:
+            "Something went wrong while sending your message. Please try again later.",
+          success: false,
+        });
+        setShowModal(true);
         setStatus("idle");
       }
     }
@@ -204,8 +225,6 @@ export default function ContactUs({ category }) {
             </button>
           </form>
 
-          {/* Right Column remains unchanged */}
-
           {/* Right: Contact Info */}
           <div className="bg-[#E1EBDD] rounded-xl p-6 mt-8 md:mt-0 text-sm leading-relaxed">
             <h4 className="mb-2 font-semibold text-[20px] text-primary-black">
@@ -268,6 +287,30 @@ export default function ContactUs({ category }) {
           />
         </div>
       </div>
+
+      {/* ✅ Modal */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50">
+          <div className="max-w-sm p-6 text-center bg-white rounded-lg shadow-xl">
+            <h3
+              className={`text-xl font-semibold mb-2 ${
+                modalContent.success ? "text-green-600" : "text-red-600"
+              }`}
+            >
+              {modalContent.title}
+            </h3>
+            <p className="mb-4 text-gray-700">{modalContent.message}</p>
+            <button
+              onClick={() => setShowModal(false)}
+              className={`px-5 py-2 rounded-md font-medium text-white ${
+                modalContent.success ? "bg-green-600" : "bg-red-600"
+              } hover:opacity-90`}
+            >
+              OK
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
