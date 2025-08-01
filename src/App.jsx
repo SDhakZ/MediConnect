@@ -7,19 +7,19 @@ import Services from "./pages/services";
 import ContactUs from "./pages/components/contactUs";
 import AboutUs from "./pages/aboutUs";
 import ProgramSectors from "./pages/programSectors";
+import NotFound from "./NotFound";
 config.autoAddCss = false;
 import "./index.css";
 function App() {
   return (
     <Routes>
       <Route element={<NavLayout />}>
-        <Route path="/" element={<Navigate to="/landing" replace />} />
-        <Route path="/landing" element={<Landing />} />
+        <Route path="/" element={<Landing />} />
         <Route path="/services" element={<Services />} />
         <Route path="/contact" element={<ContactUs />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/program-sectors/:category" element={<ProgramSectors />} />
-        <Route path="*" element={<div>404 Not Found</div>} />
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );

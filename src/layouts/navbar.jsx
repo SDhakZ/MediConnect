@@ -47,7 +47,7 @@ function Navbar() {
           shrink ? "py-4" : "py-7"
         } mx-auto transition-all duration-300`}
       >
-        <a href="/landing" className="flex items-center">
+        <a href="/" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap">
             MediConnect
           </span>

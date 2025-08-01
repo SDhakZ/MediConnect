@@ -39,7 +39,7 @@ export default function ContactUs({ category }) {
     }));
   };
 
-  /*   const handleSubmit = async (e) => {
+  const handleSubmit = async (e) => {
     e?.preventDefault?.(); // support both form and button
 
     if (recaptchaRef.current) {
@@ -69,7 +69,13 @@ export default function ContactUs({ category }) {
         );
 
         setStatus("success");
-        setFormData({ name: "", email: "", message: "",sector: "", service: "" });
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+          sector: "",
+          service: "",
+        });
 
         setTimeout(() => {
           setStatus("idle");
@@ -80,11 +86,6 @@ export default function ContactUs({ category }) {
         setStatus("idle");
       }
     }
-  }; */
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    alert("This feature is currently disabled for maintenance.");
   };
 
   return (
@@ -210,7 +211,7 @@ export default function ContactUs({ category }) {
               <span className="font-semibold">Address:</span> 9th Street
               Lakeside, Pokhara
               <br />
-              <span className="font-semibold">Phone:</span> +977 061 419116
+              <span className="font-semibold">Phone:</span> +977 061 453104
             </p>
 
             <h4 className="mb-2 font-semibold text-[20px] text-primary-black">
@@ -237,7 +238,7 @@ export default function ContactUs({ category }) {
             </p>
           </div>
         </div>
-        <div className="flex items-center mt-2 ">
+        <div className="flex items-center mt-5 ">
           <button
             form="contact-form"
             type="submit"
@@ -248,19 +249,18 @@ export default function ContactUs({ category }) {
                 : "bg-[#6d9761] hover:bg-green-700 text-white"
             } ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
           >
-            {/* {status === "loading" && "Sending..."}
+            {status === "loading" && "Sending..."}
             {status === "success" && "Sent!"}
-            {status === "idle" && "Submit"} */}
-            Submit
+            {status === "idle" && "Submit"}
           </button>
-          {/* 
+
           <ReCAPTCHA
             style={{ display: "hidden" }}
             ref={recaptchaRef}
             sitekey={sitekey}
             size="invisible"
             badge="bottomright"
-          /> */}
+          />
         </div>
       </div>
     </section>

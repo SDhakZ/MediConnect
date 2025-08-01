@@ -18,18 +18,18 @@ export default function Footer() {
             <h4 className="mb-3 text-lg font-semibold">Sections</h4>
             <ul className="space-y-3 text-base font-medium text-secondary-black">
               <li>
-                <a href="/landing/#why-nepal" className="hover:underline">
+                <a href="/#why-nepal" className="hover:underline">
                   Why Nepal?
                 </a>
               </li>
 
               <li>
-                <a href="/landing/#why-mediconnect" className="hover:underline">
+                <a href="/#why-mediconnect" className="hover:underline">
                   Why MediConnect?
                 </a>
               </li>
               <li>
-                <a href="/landing/#commitment" className="hover:underline">
+                <a href="/#commitment" className="hover:underline">
                   Our Commitment
                 </a>
               </li>
@@ -88,7 +88,7 @@ export default function Footer() {
                 <span className="font-semibold">Address:</span> 9th Street
                 Lakeside, Pokhara
                 <br />
-                <span className="font-semibold">Phone:</span> +977 061 419116
+                <span className="font-semibold">Phone:</span> +977 061 453104
               </p>
 
               <h4 className="mb-1 text-lg font-semibold text-primary-black">
