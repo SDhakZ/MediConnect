@@ -33,11 +33,7 @@ export default function Footer() {
                   Our Commitment
                 </a>
               </li>
-              <li>
-                <a href="/services" className="hover:underline">
-                  Our Services
-                </a>
-              </li>
+
               <li>
                 <a href="/about-us" className="hover:underline">
                   About Us
@@ -55,23 +51,29 @@ export default function Footer() {
             <h4 className="mb-3 text-lg font-semibold">Services we provide</h4>
             <ul className="space-y-3 text-base font-medium text-secondary-black">
               <li>
-                <a href="/services/#hospitals" className="hover:underline">
+                <a
+                  href="/program-sectors/hospitals"
+                  className="hover:underline"
+                >
                   Hospitals & Health Services
                 </a>
               </li>
               <li>
-                <a href="/services/#hotels" className="hover:underline">
+                <a href="/program-sectors/hotels" className="hover:underline">
                   Hotels & Hospitality
                 </a>
               </li>
 
               <li>
-                <a href="/services/#healing" className="hover:underline">
+                <a href="/program-sectors/wellness" className="hover:underline">
                   Wellness & Healing Centers
                 </a>
               </li>
               <li>
-                <a href="/services/#adventure" className="hover:underline">
+                <a
+                  href="/program-sectors/adventure"
+                  className="hover:underline"
+                >
                   Adventure Tourism
                 </a>
               </li>

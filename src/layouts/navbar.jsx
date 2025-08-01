@@ -49,7 +49,7 @@ function Navbar() {
       >
         <a href="/" className="flex items-center">
           <span className="self-center text-2xl font-semibold whitespace-nowrap">
-            MediConnect
+            MediConnect Pokhara
           </span>
         </a>
         <button
