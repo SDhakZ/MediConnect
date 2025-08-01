@@ -2,10 +2,10 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { useRef, useState, useEffect } from "react";
 import emailjs from "@emailjs/browser";
 import { services } from "../../data/services";
-const sectorOptions = Object.entries(services); // [[key, { title, items }], ...]
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
+const sectorOptions = Object.entries(services);
 const getServiceOptions = (sector) =>
   services[sector]?.items.map((item) => item.title) || [];
 
@@ -13,10 +13,14 @@ export default function ContactUs({ category }) {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
-    sector: category || "", // initialize with category if available
+    sector: category || "",
     service: "",
     message: "",
   });
+
+  const [status, setStatus] = useState("idle");
+  const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
+  const recaptchaRef = useRef(null);
 
   useEffect(() => {
     if (category && !formData.sector) {
@@ -24,23 +28,18 @@ export default function ContactUs({ category }) {
     }
   }, [category, formData.sector]);
 
-  const sitekey = import.meta.env.VITE_RECAPTCHA_SITE_KEY;
-  const recaptchaRef = useRef(null);
-
-  const [status, setStatus] = useState("idle");
-
   const handleChange = (e) => {
     const { name, value } = e.target;
 
     setFormData((prev) => ({
       ...prev,
       [name]: value,
-      ...(name === "sector" && value === "other" && { service: "" }), // clear service
+      ...(name === "sector" && value === "other" && { service: "" }),
     }));
   };
 
   const handleSubmit = async (e) => {
-    e?.preventDefault?.(); // support both form and button
+    e?.preventDefault?.();
 
     if (recaptchaRef.current) {
       setStatus("loading");
@@ -49,7 +48,6 @@ export default function ContactUs({ category }) {
 
       if (!token) {
         setStatus("idle");
-        alert("Captcha verification failed. Please try again.");
         return;
       }
 
@@ -82,7 +80,6 @@ export default function ContactUs({ category }) {
         }, 3000);
       } catch (error) {
         console.error("EmailJS error:", error);
-        alert("Something went wrong. Please try again later.");
         setStatus("idle");
       }
     }
@@ -90,17 +87,17 @@ export default function ContactUs({ category }) {
 
   return (
     <section className="px-4 py-12 container-margin">
-      <h2 className="mb-16 text-4xl font-semibold text-center md:text-4xl text-primary-black">
+      <h2 className="mb-16 text-4xl font-semibold text-center text-primary-black">
         Contact Us
       </h2>
 
       <div>
-        {/* Left: Form */}
         <label className="block mb-4">
           <span className="text-2xl font-semibold text-secondary-black">
             Send us your queries
           </span>
         </label>
+
         <div className="grid items-center gap-8 md:grid-cols-2">
           <form
             id="contact-form"
@@ -111,6 +108,7 @@ export default function ContactUs({ category }) {
               type="text"
               name="name"
               placeholder="Name"
+              value={formData.name}
               onChange={handleChange}
               required
               className="w-full px-4 py-3 border-2 border-[#76776f] rounded-md focus:outline-none"
@@ -119,8 +117,9 @@ export default function ContactUs({ category }) {
               type="email"
               name="email"
               placeholder="Email"
-              required
+              value={formData.email}
               onChange={handleChange}
+              required
               className="w-full px-4 py-3 border-2 border-[#76776f] rounded-md focus:outline-none"
             />
             <div className="relative">
@@ -177,23 +176,26 @@ export default function ContactUs({ category }) {
               placeholder="Message"
               rows="5"
               name="message"
-              required
+              value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 border-2 border-[#76776f] rounded-md resize-none "
+              required
+              className="w-full px-4 py-3 border-2 border-[#76776f] rounded-md resize-none"
             />
+
             <button
               type="submit"
               className="px-12 py-3 font-medium text-white transition-all bg-green-600 rounded-full md:hidden hover:bg-green-700"
             >
               Submit
             </button>
+
             <button
               type="submit"
               disabled={status === "loading"}
-              className={`hidden px-12 py-3 mr-6 font-medium rounded-full  transition-all md:hidden ${
+              className={`hidden px-12 py-3 mr-6 font-medium rounded-full transition-all md:hidden ${
                 status === "success"
                   ? "bg-green-700 text-white"
-                  : "bg-[#6d9761] hover:bg-green-700 text-white"
+                  : "bg-[#6d976f] hover:bg-green-700 text-white"
               } ${status === "loading" ? "opacity-70 cursor-not-allowed" : ""}`}
             >
               {status === "loading" && "Sending..."}
@@ -201,6 +203,8 @@ export default function ContactUs({ category }) {
               {status === "idle" && "Submit"}
             </button>
           </form>
+
+          {/* Right Column remains unchanged */}
 
           {/* Right: Contact Info */}
           <div className="bg-[#E1EBDD] rounded-xl p-6 mt-8 md:mt-0 text-sm leading-relaxed">
@@ -238,7 +242,8 @@ export default function ContactUs({ category }) {
             </p>
           </div>
         </div>
-        <div className="flex items-center mt-5 ">
+
+        <div className="flex items-center mt-5">
           <button
             form="contact-form"
             type="submit"
