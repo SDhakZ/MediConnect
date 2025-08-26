@@ -202,7 +202,7 @@ export default function WhyMediConnect() {
       </section> */}
       <section className="pt-16 md:py-24">
         <h2 className="px-10 mb-20 text-4xl font-semibold text-center text-primary-black">
-          Program Sectors
+          Program Pillars
         </h2>
         <div className="flex flex-col items-center gap-16 mx-auto md:flex md:flex-row container-margin">
           {/* Hex Grid */}

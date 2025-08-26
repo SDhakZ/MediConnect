@@ -86,7 +86,7 @@ export default function ProgramSectors() {
   };
 
   const selectedData = services[category];
-  const title = services[category]?.title || "Program Sectors";
+  const title = services[category]?.title || "Program Pillars";
 
   if (!selectedData) {
     return (

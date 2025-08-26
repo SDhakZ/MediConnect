@@ -114,6 +114,9 @@ export default function Footer() {
                 <span className="font-semibold">Address:</span> Galfutar,
                 Budhanilkantha 6, Kathmandu
               </p>
+              <p className="font-medium text-secondary-black">
+                <span className="font-semibold">Phone:</span> +977 014 370576
+              </p>
             </div>
           </div>
         </div>

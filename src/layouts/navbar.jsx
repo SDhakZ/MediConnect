@@ -102,7 +102,7 @@ function Navbar() {
                     : "text-gray-800 hover:text-green-800"
                 }`}
               >
-                Program Sectors
+                Program Pillars
               </a>
 
               {isDropdownOpen && (
