@@ -97,6 +97,11 @@ export default function WhyNepal() {
       description:
         "Explore treks, yoga retreats, Ayurveda centers, or simply unwind by the lakeside — all coordinated around your care.",
     },
+    {
+      title: "Traditional Healing",
+      description:
+        "Explore treks, yoga retreats, Ayurveda centers, or simply unwind by the lakeside — all coordinated around your care.",
+    },
   ];
 
   return (
@@ -123,7 +128,7 @@ export default function WhyNepal() {
           {/* Right Text Content */}
           <div>
             <h2 className="text-2xl md:text-4xl leading-tight text-primary-black max-w-[423px] font-semibold">
-              Why Choose Nepal for Your Medical Journey?
+              Why choose Nepal for your medical and wellness journey?
             </h2>
             <ul className="space-y-9  md:space-y-10 mt-8 md:mt-10 max-w-[450px] text-gray-700">
               {whyNepal.slice(0, 4).map((data, idx) => (
@@ -142,7 +147,7 @@ export default function WhyNepal() {
         <div className="flex flex-col-reverse items-center justify-center mt-14 gap-14 md:mt-28 md:flex-row">
           <div className="space-y-6">
             <ul className="space-y-9 md:space-y-10 max-w-[450px] text-gray-700">
-              {whyNepal.slice(4, 6).map((data, idx) => (
+              {whyNepal.slice(4, 7).map((data, idx) => (
                 <AnimatedPoint
                   key={idx}
                   title={data.title}
@@ -157,7 +162,7 @@ export default function WhyNepal() {
           <div className="relative flex items-center justify-center">
             <div className="overflow-hidden max-w-[500px]">
               <img
-                src="/Stupa.webp"
+                src="/herbs.png"
                 alt="Nepal Temple"
                 className="w-full h-full "
               />

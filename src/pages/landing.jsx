@@ -6,6 +6,7 @@ import WhyMediConnect from "./components/whyMediConnect";
 import CommitmentToNepal from "./components/commitmentToNepal";
 import ContactUs from "./components/contactUs";
 import Footer from "../layouts/footer";
+import AboutNepal from "./components/aboutNepal";
 
 export default function Landing() {
   const { hash } = useLocation();
@@ -23,6 +24,8 @@ export default function Landing() {
         <Hero />
       </section>
 
+      <section className="pt-[64px] -mt-[64px] " id="hero"></section>
+      <AboutNepal />
       <section className="pt-[64px] -mt-[64px] " id="why-nepal">
         <WhyNepal />
       </section>
