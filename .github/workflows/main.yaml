@@ -36,4 +36,6 @@ jobs:
         run: npm run build
 
       - name: Copy build files to the respective filepath
-        run: sudo cp -r $PROJECT_DIR/dist/* $NGINX_WEB_DIR
+        run: |
+          sudo mkdir -p $NGINX_WEB_DIR
+          sudo cp -r $PROJECT_DIR/dist/* $NGINX_WEB_DIR
