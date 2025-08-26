@@ -1,31 +1,41 @@
-name: Mediconnect Pokhara Main CI/CD
+name: Mediconnect Pokhara - CI/CD Pipeline
 
 on:
   push:
     branches: ["main"]
 
 jobs:
-  deploy:
+  build:
     runs-on: production
+    strategy:
+      matrix:
+        node-version: [22.x]
     env:
       PROJECT_DIR: ${{ github.workspace }}
-      CREDS_DIR: /home/abu/.creds
-      NGINX_WEB_DIR: /var/www/html/mediconnect-web
+      CREDS_DIR: /home/abu/.creds/mediconnectpokhara.com
+      NGINX_WEB_DIR: /var/www/html/mediconnectpokhara.com
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Check Node.js version (pre-installed)
-        run: node -v
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "npm"
 
-      - name: Insert credentials
+      - name: Install dependencies
+        run: npm install
+
+      - name: Copy credentials
         run: |
-          cp $CREDS_DIR/mediconnect.frontend.env $PROJECT_DIR/.env
+          cp $CREDS_DIR/.env $PROJECT_DIR/.env
 
-      - run: npm install
+      - name: Build the application
+        run: npm run build
 
-      - run: npm run build
-
-      - name: Copy Dist file to the respective filepath
-        run: sudo cp -r $PROJECT_DIR/dist/* $NGINX_WEB_DIR
+      - name: Copy build files to the respective filepath
+        run: |
+          sudo mkdir -p $NGINX_WEB_DIR
+          sudo cp -r $PROJECT_DIR/dist/* $NGINX_WEB_DIR
