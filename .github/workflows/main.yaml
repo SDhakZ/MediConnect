@@ -12,7 +12,7 @@ jobs:
         node-version: [22.x]
     env:
       PROJECT_DIR: ${{ github.workspace }}
-      CREDS_DIR: /home/abu/mediconnectpokhara.com
+      CREDS_DIR: /home/abu/.creds/mediconnectpokhara.com
       NGINX_WEB_DIR: /var/www/html/mediconnectpokhara.com
 
     steps:
